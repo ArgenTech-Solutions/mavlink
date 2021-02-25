@@ -3138,6 +3138,11 @@
       <extensions/>
       <field type="uint8_t" name="mission_type" enum="MAV_MISSION_TYPE">Mission type, see MAV_MISSION_TYPE</field>
     </message>
+	<message id="52" name="RAW_HUMIDITY">
+      <description>The RAW humidity readings</description>
+      <field type="uint64_t" name="time_usec" units="us">Timestamp (microseconds since UNIX epoch or microseconds since system boot)</field>
+      <field type="float" name="raw_humidity">humidity (raw)</field>
+    </message>
     <message id="54" name="SAFETY_SET_ALLOWED_AREA">
       <description>Set a safety zone (volume), which is defined by two corners of a cube. This message can be used to tell the MAV which setpoints/waypoints to accept and which to reject. Safety areas are often enforced by national or competition regulations.</description>
       <field type="uint8_t" name="target_system">System ID</field>
@@ -4434,6 +4439,6 @@
       <field type="float" name="yawspeed" units="rad/s">Yaw angular speed</field>
       <field type="float[21]" name="pose_covariance">Pose (states: x, y, z, roll, pitch, yaw) covariance matrix upper right triangle (first six entries are the first ROW, next five entries are the second ROW, etc.)</field>
       <field type="float[21]" name="twist_covariance">Twist (states: vx, vy, vz, rollspeed, pitchspeed, yawspeed) covariance matrix upper right triangle (first six entries are the first ROW, next five entries are the second ROW, etc.)</field>
-    </message>
+    </message>	
   </messages>
 </mavlink>
